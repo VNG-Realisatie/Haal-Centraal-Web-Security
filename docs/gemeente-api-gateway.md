@@ -2,6 +2,10 @@
 
 Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een basisregistratie API.
 
+## Gemeente doet authenticatie, basis registratie API doet authorisatie
+
+![Gemeente doet authenticatie, basis registratie API doet authorisatie](./OAuth_kadaster.jpg)
+
 ## Gemeente doet authenticatie en authorisatie
 
 - WebApp Leverancier gebruikt IdP van gemeente om medewerkers te authenticeren
@@ -17,5 +21,4 @@ Uitzoeken:
 
 - Hoe zorgen we ervoor dat een leverancier niet de url van de proxy API's hoeft te beheren. Kan het mee als claims? Dit kan heel veel zijn. Of via een discovery service?
 
-![test](./scenario-apigateway-routeert.jpg)
-
+![Gemeente doet authenticatie en authorisatie](./scenario-apigateway-routeert.jpg)
