@@ -1,12 +1,12 @@
 # Use case Applicatie leverancier wordt in de cloud gehost
 
-Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een basisregistratie API.
+Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een Haal Centraal API.
 
 ## Gemeente doet authenticatie en authorisatie
 
 - WebApp Leverancier gebruikt IdP van gemeente om medewerkers te authenticeren
-- API Gateway gemeente biedt proxy van Kadaster API die wordt aangeroepen door WebApp Leverancier
-- API Gateway gemeente routeert de API aanroep naar de basisregistratie API
+- API Gateway gemeente biedt proxy van de Haal Centraal API die wordt aangeroepen door WebApp Leverancier
+- API Gateway gemeente routeert de API aanroep naar de Haal Centraal API
 
 Voordelen:
 
