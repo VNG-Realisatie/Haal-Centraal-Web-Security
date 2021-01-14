@@ -2,7 +2,7 @@
 
 Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een Haal Centraal API.
 
-## Gemeente doet authenticatie en authorisatie
+## Gemeente doet authenticatie en autorisatie
 
 - WebApp Leverancier gebruikt IdP van gemeente om medewerkers te authenticeren
 - API Gateway gemeente biedt proxy van de Haal Centraal API die wordt aangeroepen door WebApp Leverancier
@@ -15,8 +15,12 @@ Voordelen:
 
 Uitzoeken:
 
-- Hoe zorgen we ervoor dat een leverancier niet de url van de proxy API's hoeft te beheren. Kan het mee als claims? Dit kan heel veel zijn. Of via een discovery service?
+- Hoe zorgen we ervoor dat een leverancier niet zelf de url van de proxy API's bij gemeenten hoeft te beheren in de cloud applicatie. Kan het mee als claim? Of via een discovery service?
+
+### Routeer rechtstreeks naar Haal Centraal API van de landelijke voorziening
 
 ![Gemeente doet authenticatie en authorisatie scenario BRK](./scenario-apigateway-routeert.jpg)
+
+### Routeer rechtstreeks via een intermediate bij gemeente naar Haal Centraal API van de landelijke voorziening
 
 ![Gemeente doet authenticatie en authorisatie scenario BRP](./scenario-apigateway-routeert-bij-brp.jpg)
