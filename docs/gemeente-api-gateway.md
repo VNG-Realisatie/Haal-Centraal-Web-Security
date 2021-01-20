@@ -2,9 +2,6 @@
 layout: page-with-side-nav
 title: Use case 1: SAAS applicatie 
 ---
-
-# Use case: SAAS Applicatie
-
 Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een Haal Centraal API.
 
 ## Gemeente doet authenticatie en autorisatie
