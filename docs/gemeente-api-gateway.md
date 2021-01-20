@@ -2,6 +2,7 @@
 layout: page-with-side-nav
 title: Use case 1: SAAS applicatie 
 ---
+
 # Use case: SAAS Applicatie
 
 Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een Haal Centraal API.
@@ -25,6 +26,6 @@ Uitzoeken:
 
 ![Gemeente doet authenticatie en authorisatie scenario BRK](./scenario-apigateway-routeert.jpg)
 
-### Routeer rechtstreeks via een intermediate bij gemeente naar Haal Centraal API van de landelijke voorziening
+### Routeer rechtstreeks via een intermediate endpoint bij gemeente naar Haal Centraal API van de landelijke voorziening
 
 ![Gemeente doet authenticatie en authorisatie scenario BRP](./scenario-apigateway-routeert-bij-brp.jpg)
