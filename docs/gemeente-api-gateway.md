@@ -1,20 +1,20 @@
 ---
 layout: page-with-side-nav
 ---
-# Use case: Web applicatie client (zowel on-premise als SAAS)
+# Use case: Web applicatie (zowel on-premise als SAAS)
 
-Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een Haal Centraal API.
+Gemeente heeft een (on-premis of SAAS) web applicatie die gebruik maakt van een Haal Centraal API.
 
 ## Gemeente doet authenticatie en autorisatie
 
-- WebApp Leverancier gebruikt IdP van gemeente om medewerkers te authenticeren
-- API Gateway gemeente biedt proxy van de Haal Centraal API die wordt aangeroepen door WebApp Leverancier
+- Web applicatie gebruikt IdP van gemeente om medewerkers te authenticeren
+- API Gateway gemeente biedt een intermediate endpoint als proxy van de Haal Centraal API die wordt aangeroepen door web applicatie
 - API Gateway gemeente routeert de API aanroep naar de Haal Centraal API
 
 Voordelen:
 
 - Protocollering wordt door de gemeente zelf gedaan
-- Authenticatie en authorisatie tussen API provider en Gemeente kan met dubbelzijdig TLS + api key blijven of met client credentials flow
+- Authenticatie en authorisatie tussen API provider en Gemeente kan met dubbelzijdig TLS + api key blijven of met OAuth (client credentials flow)
 
 Uitzoeken:
 
@@ -24,6 +24,6 @@ Uitzoeken:
 
 ![Gemeente doet authenticatie en authorisatie scenario BRK](./scenario-apigateway-routeert.jpg)
 
-### Routeer rechtstreeks via een intermediate endpoint bij gemeente naar Haal Centraal API van de landelijke voorziening
+### Routeer via een intermediate endpoint bij gemeente naar Haal Centraal API van de landelijke voorziening
 
 ![Gemeente doet authenticatie en authorisatie scenario BRP](./scenario-apigateway-routeert-bij-brp.jpg)
