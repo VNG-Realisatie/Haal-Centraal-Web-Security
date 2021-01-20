@@ -1,4 +1,8 @@
-# Use case Applicatie leverancier wordt in de cloud gehost
+---
+layout: page-with-side-nav
+title: Use case 1: SAAS applicatie 
+---
+# Use case: SAAS Applicatie
 
 Gemeente wil gebruik maken van een applicatie die wordt gehost in de cloud. Deze applicatie maakt gebruik van een Haal Centraal API.
 
