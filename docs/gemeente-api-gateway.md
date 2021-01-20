@@ -1,6 +1,5 @@
 ---
 layout: page-with-side-nav
-title: Use case: Web applicatie client (zowel on-premise als SAAS)
 ---
 # Use case: Web applicatie client (zowel on-premise als SAAS)
 
