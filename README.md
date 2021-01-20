@@ -9,6 +9,6 @@ Repo voor het ontwikkelen van web security best practices voor het gebruik van H
 
 
 ## Contact 
-Product Owner: Cathy Dingemanse, cathy.dingemanse@denhaag.nl 
-Ontwikkelaar: Melvin Lee, melvin.lee@iswish.nl 
-Ontwikkelaar: Andre van den Nouweland, andre.vandennouweland@denhaag.nl
+* Product Owner: Cathy Dingemanse, cathy.dingemanse@denhaag.nl 
+* Ontwikkelaar: Melvin Lee, melvin.lee@iswish.nl 
+* Ontwikkelaar: Andre van den Nouweland, andre.vandennouweland@denhaag.nl
