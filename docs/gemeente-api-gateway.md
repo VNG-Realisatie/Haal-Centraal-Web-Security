@@ -9,12 +9,12 @@ Gemeente heeft een (on-premis of SAAS) web applicatie die gebruik maakt van een 
 
 - Web applicatie gebruikt IdP van gemeente om medewerkers te authenticeren
 - API Gateway gemeente routeert de API aanroep:
-- naar een intermediate endpoint als proxy van de Haal Centraal API die wordt aangeroepen door web applicatie, bijv. voor het fileren van responses.
-- direct naar de landelijke Haal Centraal API
+  - naar een intermediate endpoint als proxy van de Haal Centraal API die wordt aangeroepen door web applicatie, bijv. voor het filteren van de response.
+  - direct naar de landelijke Haal Centraal API
 
 Voordelen:
 
-- Authenticatie en autorisatie wprdt door de gemeente zelf gedaan
+- Authenticatie en autorisatie wordt door de gemeente zelf gedaan
 - Protocollering wordt door de gemeente zelf gedaan
 - Authenticatie en autorisatie tussen landelijke API provider en Gemeente kan met dubbelzijdig TLS + api key of met OAuth (client credentials flow).
 
