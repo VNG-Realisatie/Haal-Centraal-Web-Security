@@ -12,7 +12,7 @@ Repo voor het ontwikkelen van security best practices voor het gebruik van Haal 
 * als leverancier de inrichting kunt kopieren om tegenaan te ontwikkelen
 * als leverancier kunt testen of jouw SAAS implementatie werkt met deze inrichting.
 
-# Veilig gebruik van een HC API met vertrouwelijke gegevens, wat is dat?
+# Wat is veilig gebruik van een HC API met vertrouwelijke gegevens?
 * Dat uitsluitend geautoriseerde (gebruikers van) applicaties toegang krijgen tot de gegevens die de API levert
 * Dat gebruikers uitsluitend toegang krijgen tot gegevens waarvoor zij zijn geautoriseerd
 * Dat een (SaaS)applicatie een uitsluitend toegang krijgt tot de gegevens namens een gebruiker van jouw gemeente, dus alleen als jouw medewerker achter de knoppen zit!
