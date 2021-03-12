@@ -17,7 +17,7 @@ Repo voor het ontwikkelen van security best practices voor het gebruik van Haal 
 * Dat gebruikers uitsluitend toegang krijgen tot gegevens waarvoor zij zijn geautoriseerd
 * Dat een (SaaS)applicatie een uitsluitend toegang krijgt tot de gegevens namens een gebruiker van jouw gemeente, dus alleen als jouw medewerker achter de knoppen zit!
 
-# Wat moet een gemeente daarvoor regelen?
+# Waar moeten we als gemeente naar toe (soll situatie)?
 
 ## (Toegangs)beveiliging, autorisatie en filtering
 Gemeenten bieden een breed palet aan producten en diensten die allemaal een andere minimale set gegevens en functionaliteit nodig hebben. Onze diensten worden geleverd door veel verschillende medewerkers met verschillende rollen en rechten. We kunnen (nog) niet aan een landelijke voorziening vragen om hiervoor de toegangsbeveiliging en autorisatie te organiseren. Dat moet een gemeente zelf doen. Minimaal is nodig:
