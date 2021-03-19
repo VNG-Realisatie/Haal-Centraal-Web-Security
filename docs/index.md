@@ -12,7 +12,7 @@ Repo voor het ontwikkelen van security best practices voor het gebruik van Haal 
 * als leverancier de inrichting kunt kopieren om tegenaan te ontwikkelen
 * als leverancier kunt testen of jouw SAAS implementatie werkt met deze inrichting.
 
-# Wat is veilig gebruik van een HC API met vertrouwelijke gegevens?
+# Wat is de kern van veilig gebruik van een HC API met vertrouwelijke gegevens?
 * Dat uitsluitend geautoriseerde (gebruikers van) applicaties toegang krijgen tot de gegevens die de API levert
 * Dat gebruikers uitsluitend toegang krijgen tot gegevens waarvoor zij zijn geautoriseerd
 * Dat een (SaaS)applicatie uitsluitend toegang krijgt tot de gegevens namens een gebruiker van jouw gemeente, dus alleen als jouw medewerker achter de knoppen zit!
@@ -31,6 +31,11 @@ Bij voorkeur wordt de Identity Provider gevoed door een IAM systeem, waarmee je 
 
 ## controle achteraf: logging en protocollering
 Een gemeente moet beschikken over een centrale logging- of protocolleringsvoorziening, waarin API requests en evt. ook responses onweerlegbaar worden vastgelegd, samen met het token dat de identiteit en claims van de eindgebruiker bevat. Door de API Gateway te laten loggen en de toegangsbeveiling voor nieuwe applicaties te baseren op eindgebruikercredentials hoef je straks in de meeste gevallen niet meer te protocolleren in de afnemende applicatie. Ook kun je burgerverzoeken in het kader van de AVG beter en sneller afhandelen door de logginggegevens te verrijken met de informatie uit je verwerkingsregister. Voor het verzamelen, opslaan en analyse van de logging kun je bijvoorbeeld gebruik maken van de Elastic ELK Stack, Splunk, LogRhythm, Graylog etc.    
+
+
+# Hoe komen we daar?
+De Haal Centraal maakt aansluiten goedkoper en vermindert het aantal lokale kopieen, te beginnen bij het gegevensmagazijn/distributriesysteeem. Wil je deze besparing op korte termijn inboeken, dan moet je alle afnemers van het gegevensmagazijn aansluiten op API's, ook de legacy applicaties. Totdat zo'n systeem opnieuw wordt aanbesteed kun je bijvoorbeeld je toevlucht zoeken bij"vertalers" die de API gegevens omzetten in StUF berichten. 
+
 
 
 ## Contact 
