@@ -34,7 +34,7 @@ Een gemeente moet beschikken over een centrale logging- of protocolleringsvoorzi
 
 
 # Hoe komen we daar?
-De Haal Centraal maakt aansluiten goedkoper en vermindert het aantal lokale kopieen, te beginnen bij het gegevensmagazijn/distributriesysteeem. Wil je deze besparing op korte termijn inboeken, dan moet je alle afnemers van het gegevensmagazijn aansluiten op API's, ook de legacy applicaties. Totdat zo'n systeem opnieuw wordt aanbesteed kun je bijvoorbeeld je toevlucht zoeken bij"vertalers" die de API gegevens omzetten in StUF berichten. 
+De Haal Centraal maakt aansluiten goedkoper en vermindert het aantal lokale kopieën, te beginnen bij het gegevensmagazijn/distributriesysteeem. Wil je deze besparing op korte termijn inboeken, dan moet je alle afnemers van het gegevensmagazijn aansluiten op API's, ook de legacy applicaties. Totdat zo'n systeem opnieuw wordt aanbesteed kun je bijvoorbeeld je toevlucht zoeken bij"vertalers" die de API gegevens omzetten in StUF berichten. 
 
 
 
