@@ -1,0 +1,25 @@
+﻿@model HaalCentraal.Viewer.Models.GetAdressenViewModel
+
+<form asp-controller="Bag" asp-action="Index" method="post">
+    <input type="text" placeholder="zoek term" name="zoekTerm" value="@Model.Command.ZoekTerm" />
+    <button type="submit">zoek</button>
+</form>
+<br />
+@if (Model.Resultaat?._embedded != null)
+{
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Identificatie</th>
+                <th>Omschrijving</th>
+            </tr>
+            @foreach (var zr in Model.Resultaat?._embedded?.Zoekresultaten)
+            {
+                <tr>
+                    <td>@zr.Identificatie</td>
+                    <td>@zr.Omschrijving</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
