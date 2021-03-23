@@ -36,6 +36,7 @@ Een gemeente moet beschikken over een centrale logging- of protocolleringsvoorzi
 Alles begint met het bepalen van de migratiestrategie voor jouw gemeente. Wij onderscheiden grofweg 2 strategieën, die eventueel in combinatie kunnen worden toegepast: 
 * A. het actief uitfaseren van het gegevensmagazijn
 * B. de sterfhuiscontructie, waarbij je een nieuwe infrastructuur naast de oude implementeert en de oude situatie onveranderd laat.  
+
 Welke van de twee je kiest hangt af van de situatie in jouw gemeente en het rekensommetje dat er bij hoort. Vergelijk de kosten van de migratie enerzijds met de "dubbele" kosten die je maakt gedurende de sterfhuisperiode anderzijds, en probeer hierin een optimum te vinden. Het gaat hierbij om de jaarlijkste kosten voor beheer en onderhoud van het gegvensmagazijn, hoeveel afnemers zijn er op aangesloten, wanneer de aangesloten applicaties aan vervanging toe zijn, en wat de kosten en mogelijkheden zijn voor een afnemende applicatie om naar naar API's te migreren, al dan niet met een "vertaler". Hieronder is een stappenplan beschreven voor strategie A. Kies je voor strategie B, dan moet je de de voorzieningen uit de eerste twee stappen aanschaffen en inrichten om van start te gaan.
 
 ## Stap 1
