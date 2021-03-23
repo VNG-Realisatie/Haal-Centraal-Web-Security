@@ -3,7 +3,6 @@
     "IdentityResources": [
       {
         "Required": true,
-        "Emphasize": false,
         "Name": "openid",
         "DisplayName": "Your user identifier",
         "UserClaims": [ "sub" ]
@@ -18,7 +17,6 @@
       },
       {
         "Required": true,
-        "Emphasize": false,
         "Name": "gemeente-specifiek",
         "Description": "Gemeente specifieke claims",
         "UserClaims": [ "bag-permission", "brk-permission", "brp-permission", "gemeente" ]

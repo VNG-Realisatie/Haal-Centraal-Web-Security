@@ -14,11 +14,11 @@
       },
       {
         "Type": "brk-permission",
-        "Value": "read"
+        "Value": "read-excl-bsn"
       },
       {
         "Type": "brp-permission",
-        "Value": "read-excl-bsn"
+        "Value": "read"
       },
       {
         "Type": "gemeente",
