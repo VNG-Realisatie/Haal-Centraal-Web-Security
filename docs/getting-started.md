@@ -2,11 +2,11 @@
 layout: page-with-side-nav
 title: Getting Started
 ---
-De Haal Centraal Web Security repo bevat een starter kit waarmee OpenId Connect en OAuth 2 kan worden uitgeprobeerd. De starter kit bestaat uit een aantal web applicaties waarmee de OAuth 2 rollen wordt ingevuld:
+De Haal Centraal Web Security repo bevat een starter kit waarmee je OpenId Connect en OAuth 2 kunt uitproberen. De starter kit bestaat uit een aantal web applicaties waarmee de OAuth 2 rollen worden ingevuld:
 
-- HaalCentraal.IdentityServer. Deze web applicatie vervult de rol van de **Autorisatie Server** binnen OAuth
-- HaalCentraal.Viewer, een traditioneel web applicatie (code wordt uitgevoerd op een server) die binnen OAuth de rol van de **Client** vervult en is consumer van de BAG-, BRK- en BRP Raadplegen APIs
-- HaalCentraal.ApiGateway. Binnen OAuth vervult deze web applicatie de **Resource** rol. Het is geïmplementeerd als een proxy voor de echte BAG-, BRK- en BRP Raadplegen APIs
+- HaalCentraal.IdentityServer: deze web applicatie vervult de rol van de **Autorisatie Server** binnen OAuth
+- HaalCentraal.Viewer: een traditionele web applicatie (code wordt uitgevoerd op een server) die binnen OAuth de rol van de **Client** vervult en is consumer van de BAG-, BRK- en BRP Bevragen APIs
+- HaalCentraal.ApiGateway: binnen OAuth vervult deze web applicatie de **Resource** rol, en is geïmplementeerd als een proxy voor de echte BAG-, BRK- en BRP Raadplegen APIs
 
 Verder bevat de starter kit een aantal ondersteunende web applicaties:
 
@@ -15,15 +15,15 @@ Verder bevat de starter kit een aantal ondersteunende web applicaties:
   - viewer.haalcentraal.local te routeren naar de Viewer web applicatie
   - api.haalcentraal.local te routeren naar de ApiGateway web applicatie
 
-Voor het hosten van de web applicaties wordt gebruik gemaakt van Docker. Docker maakt het mogelijk om applicaties te containerizen. Een ge-containerized applicatie bevat behalve de applicatie ook al zijn afhankelijkheden, zodat de applicatie op elke PC kan worden gedraaid zonder de afhankelijkheden te moeten installeren op de PC.
+Voor het hosten van de web applicaties wordt gebruik gemaakt van Docker. Docker maakt het mogelijk om applicaties te containerizen. Een gecontainerizede applicatie bevat behalve de applicatie ook al zijn afhankelijkheden, zodat de applicatie op elke PC kan worden gedraaid zonder de afhankelijkheden te moeten installeren op de PC.
 
 ## Vereiste
 
-Voor het draaien van de web applicaties is [Docker Desktop](https://www.docker.com/products/docker-desktop) een vereiste. Optioneel kan ook [Postman] worden geïnstalleerd. Postman is een generieke consumer voor APIs en ondersteunt ook OAuth als security protocol. Met Postman kan dus ook een API beveiligd met OAuth worden aangeroepen.
+Voor het draaien van de web applicaties is [Docker Desktop](https://www.docker.com/products/docker-desktop) een vereiste. Optioneel kan ook [Postman] worden geïnstalleerd. Postman is een generieke consumer voor APIs en ondersteunt ook OAuth als security protocol. Met Postman kan dus ook een API worden aangeroepen die is beveiligd met OAuth.
 
 ## Configuratie
 
-Om het uitproberen van de web applicaties makkelijk te maken, wordt de configuratie van de web applicaties gerealiseerd met behulp van json bestanden. Deze configuratie bestanden zijn te vinden onder de `config` map. Voor het draaien van de web applicaties as-is, moet minimaal de configuratie van de ApiGateway worden aangepast.
+Om het uitproberen van de web applicaties makkelijk te maken, wordt de configuratie van de web applicaties gerealiseerd met behulp van json bestanden. Deze configuratie bestanden zijn te vinden in de `config` map. Voor het draaien van de web applicaties as-is, moet minimaal de configuratie van de ApiGateway worden aangepast.
 
 ### HaalCentraal.ApiGateway configuratie
 
@@ -97,7 +97,7 @@ Voor een scope kunnen `UserClaims` worden gedefinieerd. Deze user claims worden 
 
 #### Clients
 
-Een applicatie die toegang wil krijgen tot de APIs die beveiligd zijn met OAuth, moet bekend als client bij de IdP/STS van de APIs. Voor HaalCentraal.IdentityServer zijn de clients gedefinieerd onder de **Clients** root element. In de volgende json snippet zijn de client definities van de HaalCentraal.Viewer applicatie en een machine to machine client te zien:
+Een applicatie die toegang wil krijgen tot de APIs die beveiligd zijn met OAuth, moet bij de IdP/STS van de APIs bekend zijn. Voor HaalCentraal.IdentityServer zijn de clients gedefinieerd onder de **Clients** root element. In de volgende json snippet zijn de client definities van de HaalCentraal.Viewer applicatie en een machine to machine client te zien:
 
 ``` json
 "Clients": [
@@ -122,19 +122,19 @@ Een applicatie die toegang wil krijgen tot de APIs die beveiligd zijn met OAuth,
 
 #### Identity Resources (User Scopes)
 
-In [IdentityServer4](https://identityserver4.readthedocs.io), een OpenId Connect en OAuth 2 framework voor .NET waarmee HaalCentraal.IdentityServer is geïmplementeerd, worden user claims gedefinieerd met behulp van IdentityResources. Een IdentityResource is een naam dat als user scope wordt gebruikt, om één of meerdere user claims aan te duiden. Voor de starter kit is als voorbeeld een IdentityResource `gemeente-specifiek` gedefinieerd om alle gemeente-specifieke user claims aan te duiden. Voorbeelden van gemeente-specifieke user claims zijn:
+In [IdentityServer4](https://identityserver4.readthedocs.io), een OpenId Connect en OAuth 2 framework voor .NET waarmee HaalCentraal.IdentityServer is geïmplementeerd, worden user claims gedefinieerd met behulp van IdentityResources. Een IdentityResource is een naam die als user scope wordt gebruikt, om één of meerdere user claims aan te duiden. Voor de starter kit is als voorbeeld een IdentityResource `gemeente-specifiek` gedefinieerd om alle gemeente-specifieke user claims aan te duiden. Voorbeelden van gemeente-specifieke user claims zijn:
 
 - gemeente. De gemeente waar de ingelogde user werkt. Hiermee kan de HaalCentraal.ApiGateway bepalen of de ingelogde gebruiker een binnen/buiten gemeentelijke bevraging op de BRP doet
-- bag-permission, brk-permission, brp-permission. Met een scope wordt op API of endpoint niveau de toegang bepaald. Voor fijnmaziger autorisatie kan user claims worden gebruikt.
+- bag-permission, brk-permission, brp-permission. Met een scope wordt op API of endpoint niveau de toegang bepaald. Voor fijnmaziger autorisatie kunnen user claims worden gebruikt.
 
 In de volgende json snippet is de definitie van de `gemeente-specifiek` IdentityResource te zien:
 
 ``` json
 "IdentityResources": [
     {
-    "Required": true, // verplicht/niet verplicht maken van een user scope. Verplichte scopes kunnen in de consent scherm niet worden uitgevinkt
+    "Required": true, // verplicht/niet verplicht maken van een user scope. Verplichte scopes kunnen in het consent scherm niet worden uitgevinkt
     "Name": "gemeente-specifiek",
-    "Description": "Gemeente specifieke claims", // omschrijving die wordt getoond in de consent scherm
+    "Description": "Gemeente specifieke claims", // omschrijving die wordt getoond in het consent scherm
     "UserClaims": [ "bag-permission", "brk-permission", "brp-permission", "gemeente" ] // de user claims die vallen onder deze IdentityResource
     }
 ]
@@ -198,13 +198,13 @@ In de certificate map zijn er drie pfx bestanden:
 - oidc.haalcentraal.local.pfx
 - viewer.haalcentraal.local.pfx
 
-Deze moeten worden geïmporteerd in de trusted root certificate store
+Deze moeten worden geïmporteerd in de trusted root certificate store.
 
 ## Bouwen Docker Images
 
 Het bouwen van de Docker Images voor de web applicaties wordt opgestart met behulp van de volgende statement: `docker-compose -f docker-compose-id4.yml build`
 
-Het bouwen van de Docker Images hoeft alleen de eerste keer te gebeuren of na het pullen van updates uit de Haal-Centraal-Web-Security repo
+Het bouwen van de Docker Images hoeft alleen de eerste keer te gebeuren of na het pullen van updates uit de Haal-Centraal-Web-Security repo.
 
 ## Opstarten Docker Containers
 
