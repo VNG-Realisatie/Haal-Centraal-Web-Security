@@ -2,8 +2,7 @@
   "IdentityServer": {
     "IdentityResources": [
       {
-        "Required": true,
-        "Emphasize": false,
+        "Required": false,
         "Name": "openid",
         "DisplayName": "Your user identifier",
         "UserClaims": [ "sub" ]
@@ -17,8 +16,7 @@
         "UserClaims": [ "name", "family_name", "given_name", "middle_name", "nickname", "preferred_username", "profile", "picture", "website", "gender", "birthdate", "zoneinfo", "locale", "updated_at" ]
       },
       {
-        "Required": true,
-        "Emphasize": false,
+        "Required": false,
         "Name": "gemeente-specifiek",
         "Description": "Gemeente specifieke claims",
         "UserClaims": [ "bag-permission", "brk-permission", "brp-permission", "gemeente" ]

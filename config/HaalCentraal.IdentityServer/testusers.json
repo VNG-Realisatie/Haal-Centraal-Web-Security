@@ -23,6 +23,10 @@
       {
         "Type": "gemeente",
         "Value": "0518"
+      },
+      {
+        "Type": "role",
+        "Value": "HC-001"
       }
     ]
   },
@@ -42,6 +46,10 @@
       {
         "Type": "gemeente",
         "Value": "0599"
+      },
+      {
+        "Type": "role",
+        "Value": "HC-002"
       }
     ]
   }
