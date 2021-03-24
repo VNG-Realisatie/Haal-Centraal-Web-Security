@@ -28,7 +28,7 @@ Belangrijk:
 
 ## Wat is OpenID Connect
 
-Volgens de OpenID Foundation is [OpenID Connect](https://openid.net/connect/) een extensie van OAuth 2 waarmee een *Client* informatie over de ingelogde *Resource Owner* kan opvragen. Een *Client* geeft met behulp van *identity scopes* welke identiteit gegevens (claims) hij van de *Resource Owner* wil opvragen. Hieronder is een overzicht van de standaard OpenID *scopes* en *claims*:
+Volgens de OpenID Foundation is [OpenID Connect](https://openid.net/connect/) een extensie van OAuth 2 waarmee een *Client* informatie over de ingelogde *Resource Owner* kan opvragen. Een *Client* geeft met behulp van *identity scopes* op welke identiteit gegevens (claims) hij van de *Resource Owner* wil opvragen. Hieronder is een overzicht van de standaard OpenID *scopes* en *claims*:
 
 | scope | claims | omschrijving |
 | --- | --- | --- |
