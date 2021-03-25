@@ -1,0 +1,66 @@
+{
+  "IdentityServer": {
+    "IdentityResources": [
+      {
+        "Required": false,
+        "Name": "openid",
+        "DisplayName": "Your user identifier",
+        "UserClaims": [ "sub" ]
+      },
+      {
+        "Required": false,
+        "Emphasize": true,
+        "Name": "profile",
+        "DisplayName": "User profile",
+        "Description": "Your user profile information (first name, last name, etc.)",
+        "UserClaims": [ "name", "family_name", "given_name", "middle_name", "nickname", "preferred_username", "profile", "picture", "website", "gender", "birthdate", "zoneinfo", "locale", "updated_at" ]
+      },
+      {
+        "Required": false,
+        "Name": "gemeente-specifiek",
+        "Description": "Gemeente specifieke claims",
+        "UserClaims": [ "bag-permission", "brk-permission", "brp-permission", "gemeente" ]
+      }
+    ],
+    "ApiScopes": [
+      {
+        "Name": "BAG",
+        "UserClaims": [ "bag-permission" ]
+      },
+      {
+        "Name": "BRK",
+        "UserClaims": [ "brk-permission" ]
+      },
+      {
+        "Name": "BRP",
+        "UserClaims": [ "brp-permission", "gemeente" ]
+      }
+    ],
+    "Clients": [
+      {
+        "ClientId": "haalcentraalviewer",
+        "ClientSecrets": [ { "Value": "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=" } ],
+        "AllowedGrantTypes": [ "authorization_code" ],
+        "RequirePkce": true,
+        "AllowedScopes": [ "openid", "profile", "gemeente-specifiek", "BAG", "BRK", "BRP" ],
+        "RedirectUris": [ "https://localhost:5011/signin-oidc" ],
+        "PostLogoutRedirectUris": [ "https://localhost:5011/signout-callback-oidc" ],
+        "RequireConsent": true
+      },
+      {
+        "ClientId": "postman",
+        "ClientSecrets": [ { "Value": "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=" } ],
+        "AllowedGrantTypes": [ "authorization_code" ],
+        "RequirePkce": false,
+        "AllowedScopes": [ "openid", "profile" ],
+        "RedirectUris": [ "https://oauth.pstmn.io/v1/callback" ]
+      },
+      {
+        "ClientId": "m2m",
+        "ClientSecrets": [ { "Value": "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=" } ],
+        "AllowedGrantTypes": [ "client_credentials" ],
+        "AllowedScopes": [ "BAG", "BRK", "BRP" ]
+      }
+    ]
+  }
+}

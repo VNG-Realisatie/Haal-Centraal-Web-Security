@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  haalcentraal.identityserver:
+    image: ${DOCKER_REGISTRY-}haalcentraalidentityserver
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.IdentityServer/Dockerfile
+    hostname: oidc.haalcentraal.local
+    networks:
+      - haal-centraal-network
+
+  haalcentraal.viewer:
+    image: ${DOCKER_REGISTRY-}haalcentraalviewer
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.Viewer/Dockerfile
+    container_name: viewer.haalcentraal.local
+    hostname: viewer.haalcentraal.local
+    networks:
+      - haal-centraal-network
+
+  haalcentraal.apigateway:
+    image: ${DOCKER_REGISTRY-}haalcentraalapigateway
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.ApiGateway/Dockerfile
+    container_name: api.haalcentraal.local
+    hostname: api.haalcentraal.local
+    networks:
+      - haal-centraal-network
+
+  haalcentraal.brkbevragen:
+    image: ${DOCKER_REGISTRY-}haalcentraalbrkbevragen
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.BrkBevragen/Dockerfile
+
+networks:
+  haal-centraal-network: {}
+
+

@@ -1,0 +1,58 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/bag/{everything}",
+      "DownstreamPathTemplate": "/esd/huidigebevragingen/v1/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api.bag.acceptatie.kadaster.nl",
+          "Port": "443"
+        }
+      ],
+      "UpstreamHeaderTransform": {
+        "X-Api-Key": "bag-api-key"
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "oidc",
+        "AllowedScopes": [ "BAG" ]
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/brk/{everything}",
+      "DownstreamPathTemplate": "/esd/bevragen/v1/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api.brk.acceptatie.kadaster.nl",
+          "Port": "443"
+        }
+      ],
+      "UpstreamHeaderTransform": {
+        "X-Api-Key": "brk-api-key"
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "oidc",
+        "AllowedScopes": [ "BRK" ]
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/brp/{everything}",
+      "DownstreamPathTemplate": "/haalcentraal/api/brp/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "www.haalcentraal.nl",
+          "Port": "443"
+        }
+      ],
+      "UpstreamHeaderTransform": {
+        "X-API-KEY": "brp-api-key"
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "oidc",
+        "AllowedScopes": [ "BRP" ]
+      }
+    }
+  ]
+}
