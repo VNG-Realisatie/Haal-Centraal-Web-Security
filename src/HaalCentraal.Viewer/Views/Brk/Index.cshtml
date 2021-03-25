@@ -1,0 +1,30 @@
+﻿@model HaalCentraalViewer.Models.GetKadastraalOnroerendeZakenViewModel
+
+<form asp-controller="Brk" asp-action="Index" method="post">
+    <input type="text" placeholder="postcode" name="postcode" value="@Model.Command.Postcode" />
+    <input type="text" placeholder="huisnummer" name="huisnummer" value="@Model.Command.Huisnummer" />
+    <button type="submit">zoek</button>
+</form>
+<br />
+@if (Model.Resultaat?._embedded != null)
+{
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Identificatie</th>
+                <th>Aanduiding</th>
+                <th>Koopsom</th>
+                <th>Koopjaar</th>
+            </tr>
+            @foreach (var koz in Model.Resultaat?._embedded?.KadastraalOnroerendeZaken)
+            {
+                <tr>
+                    <td>@koz.Identificatie</td>
+                    <td>@koz.KadastraleAanduiding</td>
+                    <td>@koz.Koopsom?.Koopsom</td>
+                    <td>@koz.Koopsom?.Koopjaar</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

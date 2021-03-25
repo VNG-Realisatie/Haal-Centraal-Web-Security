@@ -1,0 +1,28 @@
+﻿@model HaalCentraal.Viewer.Models.GetIngeschrevenPersonenViewModel
+
+<form asp-controller="Brp" asp-action="Index" method="post">
+    <input type="text" placeholder="geslachtsnaam" name="geslachtsnaam" value="@Model.Command.Geslachtsnaam" />
+    <input type="date" placeholder="geboortedatum" name="geboortedatum" value="@Model.Command.Geboortedatum" />
+    <button type="submit">zoek</button>
+</form>
+<br />
+@if (Model.Resultaat?._embedded != null)
+{
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Burgerservicenummer</th>
+                <th>Naam</th>
+                <th>Geboortedatum</th>
+            </tr>
+            @foreach (var ip in Model.Resultaat?._embedded?.Ingeschrevenpersonen)
+            {
+                <tr>
+                    <td>@ip.Burgerservicenummer</td>
+                    <td>@ip.Naam.Aanschrijfwijze</td>
+                    <td>@ip.Geboorte.Datum.Datum.ToString("dd-MM-yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

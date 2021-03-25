@@ -1,0 +1,56 @@
+[
+  {
+    "SubjectId": "1",
+    "Username": "jan",
+    "Password": "jan",
+    "Claims": [
+      {
+        "Type": "name",
+        "Value": "Jan Janssen"
+      },
+      {
+        "Type": "bag-permission",
+        "Value": "read"
+      },
+      {
+        "Type": "brk-permission",
+        "Value": "read-excl-bsn"
+      },
+      {
+        "Type": "brp-permission",
+        "Value": "read"
+      },
+      {
+        "Type": "gemeente",
+        "Value": "0518"
+      },
+      {
+        "Type": "role",
+        "Value": "HC-001"
+      }
+    ]
+  },
+  {
+    "SubjectId": "2",
+    "Username": "klaas",
+    "Password": "klaas",
+    "Claims": [
+      {
+        "Type": "name",
+        "Value": "Klaas Jan"
+      },
+      {
+        "Type": "brp-permission",
+        "Value": "read"
+      },
+      {
+        "Type": "gemeente",
+        "Value": "0599"
+      },
+      {
+        "Type": "role",
+        "Value": "HC-002"
+      }
+    ]
+  }
+]

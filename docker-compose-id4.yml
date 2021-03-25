@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+  reverseproxy:
+    build:
+      context: .
+      dockerfile: src/nginx/Dockerfile
+    ports:
+      - "44395:44395"
+    networks:
+      haalcentraal-net:
+        aliases:
+          - "api.haalcentraal.local"
+          - "viewer.haalcentraal.local"
+          - "oidc.haalcentraal.local"
+    depends_on:
+      - haalcentraal.apigateway
+      - haalcentraal.viewer
+      - haalcentraal.identity
+
+  haalcentraal.apigateway:
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.ApiGateway/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5020
+    ports:
+      - "5020"
+    networks:
+      - haalcentraal-net
+    volumes:
+      - ./config/HaalCentraal.ApiGateway:/app/config
+
+  haalcentraal.viewer:
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.Viewer/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5010
+      - HaalCentraalApiGatewayBaseUrl=https://api.haalcentraal.local:44395
+    ports:
+      - "5010"
+    volumes:
+      - ./config/HaalCentraal.Viewer:/app/config
+    networks:
+      - haalcentraal-net
+
+  haalcentraal.identity:
+    build:
+      context: .
+      dockerfile: src/HaalCentraal.IdentityServer/Dockerfile
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+    ports:
+      - "5000"
+    volumes:
+      - ./config/HaalCentraal.IdentityServer:/app/config
+    networks:
+      - haalcentraal-net
+    depends_on:
+      - haalcentraal.viewer
+
+networks:
+  haalcentraal-net:
+    driver: bridge
