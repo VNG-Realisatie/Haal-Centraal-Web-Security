@@ -14,8 +14,6 @@ namespace HaalCentraal.Viewer.Controllers
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<BrpController> _logger;
 
-        private static GetIngeschrevenPersonenViewModel ViewModel { get; set; } = new GetIngeschrevenPersonenViewModel();
-
         public BrpController(IHttpClientFactory httpClientFactory,
                              ILogger<BrpController> logger)
         {
@@ -24,24 +22,25 @@ namespace HaalCentraal.Viewer.Controllers
         }
         public IActionResult Index()
         {
-            return View(ViewModel);
+            return View(new GetIngeschrevenPersonenViewModel());
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(GetIngeschrevenPersonenCommandModel model)
         {
-            ViewModel.Command = model;
+            var vm = new GetIngeschrevenPersonenViewModel();
+            vm.Command = model;
 
             try
             {
                 var client = new BrpBevragen.Client(_httpClientFactory.CreateClient("brp"));
 
-                ViewModel.Resultaat = await client.GetIngeschrevenPersonenAsync(naam__geslachtsnaam: model.Geslachtsnaam, geboorte__datum: model.Geboortedatum);
+                vm.Resultaat = await client.GetIngeschrevenPersonenAsync(naam__geslachtsnaam: model.Geslachtsnaam, geboorte__datum: model.Geboortedatum);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error");
-                ViewModel.Fout = ex switch
+                vm.Fout = ex switch
                 {
                     BrpBevragen.ApiException<BrpBevragen.Foutbericht> exc2 => exc2.Result,
                     BrpBevragen.ApiException exc => new BrpBevragen.Foutbericht { Status = exc.StatusCode },
@@ -49,7 +48,7 @@ namespace HaalCentraal.Viewer.Controllers
                 };
             }
 
-            return RedirectToAction("Index");
+            return View("Index", vm);
         }
     }
 }

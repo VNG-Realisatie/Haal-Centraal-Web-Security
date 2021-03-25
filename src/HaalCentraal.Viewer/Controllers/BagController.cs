@@ -17,7 +17,6 @@ namespace HaalCentraal.Viewer.Controllers
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<BagController> _logger;
 
-        private static GetAdressenViewModel ViewModel { get; set; } = new GetAdressenViewModel();
 
         public BagController(IHttpClientFactory httpClientFactory,
                              ILogger<BagController> logger)
@@ -28,24 +27,27 @@ namespace HaalCentraal.Viewer.Controllers
 
         public IActionResult Index()
         {
-            return View(ViewModel);
+            return View(new GetAdressenViewModel());
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(GetAdressenCommandModel model)
         {
-            ViewModel.Command = model;
+            var vm = new GetAdressenViewModel
+            {
+                Command = model
+            };
 
             try
             {
                 var client = new BagBevragen.Client(_httpClientFactory.CreateClient("bag"));
 
-                ViewModel.Resultaat = await client.ZoekAsync(zoek: model.ZoekTerm);
+                vm.Resultaat = await client.ZoekAsync(zoek: model.ZoekTerm);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error");
-                ViewModel.Fout = ex switch
+                vm.Fout = ex switch
                 {
                     BagBevragen.ApiException<BagBevragen.Foutbericht> exc2 => exc2.Result,
                     BagBevragen.ApiException exc => new BagBevragen.Foutbericht { Status = exc.StatusCode },
@@ -53,7 +55,7 @@ namespace HaalCentraal.Viewer.Controllers
                 };
             }
 
-            return RedirectToAction("Index");
+            return View("Index", vm);
         }
     }
 }
