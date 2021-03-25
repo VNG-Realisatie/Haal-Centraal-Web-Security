@@ -14,8 +14,6 @@ namespace HaalCentraal.Viewer.Controllers
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<BrkController> _logger;
 
-        private static GetKadastraalOnroerendeZakenViewModel ViewModel { get; set; } = new GetKadastraalOnroerendeZakenViewModel();
-
         public BrkController(IHttpClientFactory httpClientFactory,
                              ILogger<BrkController> logger)
         {
@@ -25,24 +23,25 @@ namespace HaalCentraal.Viewer.Controllers
 
         public IActionResult Index()
         {
-            return View(ViewModel);
+            return View(new GetKadastraalOnroerendeZakenViewModel());
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(GetKadastraalOnroerendeZakenCommandModel model)
         {
-            ViewModel.Command = model;
+            var vm = new GetKadastraalOnroerendeZakenViewModel();
+            vm.Command = model;
 
             try
             {
                 var client = new BrkBevragen.Client(_httpClientFactory.CreateClient("brk"));
 
-                ViewModel.Resultaat = await client.GetKadastraalOnroerendeZakenAsync(postcode: model.Postcode, huisnummer: model.Huisnummer);
+                vm.Resultaat = await client.GetKadastraalOnroerendeZakenAsync(postcode: model.Postcode, huisnummer: model.Huisnummer);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error");
-                ViewModel.Fout = ex switch
+                vm.Fout = ex switch
                 {
                     BrkBevragen.ApiException<BrkBevragen.Foutbericht> exc2 => exc2.Result,
                     BrkBevragen.ApiException exc => new BrkBevragen.Foutbericht { Status = exc.StatusCode },
@@ -50,7 +49,7 @@ namespace HaalCentraal.Viewer.Controllers
                 };
             }
 
-            return RedirectToAction("Index");
+            return View("Index", vm);
         }
     }
 }
