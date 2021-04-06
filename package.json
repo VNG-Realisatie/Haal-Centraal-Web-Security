@@ -1,0 +1,29 @@
+{
+  "name": "Haal-Centraal-Web-Security",
+  "version": "1.0.0",
+  "description": "Repo voor het ontwikkelen van security best practices voor het gebruik van Haal Centraal API's. Doel is te laten zien hoe je security kunt inrichten voor Haal Centraal API's aan de hand van referentie-implementaties, zodat je:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "preoas:resolve": "mvn-dl io.swagger.codegen.v3:swagger-codegen-cli:3.0.25 -f swagger-codegen-cli.jar",
+    "oas:resolve-bag-bevragen": "java -jar swagger-codegen-cli.jar generate -i ./specificatie/bag-bevragen/openapi.yaml -l openapi-yaml -o ./specificatie/genereervariant/bag-bevragen && java -jar swagger-codegen-cli.jar generate -i ./specificatie/bag-bevragen/openapi.yaml -l openapi -o ./specificatie/genereervariant/bag-bevragen",
+    "oas:resolve": "npm run oas:resolve-bag-bevragen",
+    "postoas:resolve": "rm swagger-codegen-cli.jar"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VNG-Realisatie/Haal-Centraal-Web-Security.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VNG-Realisatie/Haal-Centraal-Web-Security/issues"
+  },
+  "homepage": "https://github.com/VNG-Realisatie/Haal-Centraal-Web-Security#readme",
+  "devDependencies": {
+    "mvn-dl": "^5.1.1"
+  }
+}
