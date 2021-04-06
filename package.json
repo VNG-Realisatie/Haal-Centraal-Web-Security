@@ -10,7 +10,8 @@
     "preoas:resolve": "mvn-dl io.swagger.codegen.v3:swagger-codegen-cli:3.0.19 -f swagger-codegen-cli.jar",
     "oas:resolve-bag-bevragen": "java -jar swagger-codegen-cli.jar generate -i ./specificatie/bag-bevragen/openapi.yaml -l openapi-yaml -o ./specificatie/genereervariant/bag-bevragen && java -jar swagger-codegen-cli.jar generate -i ./specificatie/bag-bevragen/openapi.yaml -l openapi -o ./specificatie/genereervariant/bag-bevragen",
     "oas:resolve-brk-bevragen": "java -jar swagger-codegen-cli.jar generate -i ./specificatie/brk-bevragen/openapi.yaml -l openapi-yaml -o ./specificatie/genereervariant/brk-bevragen && java -jar swagger-codegen-cli.jar generate -i ./specificatie/brk-bevragen/openapi.yaml -l openapi -o ./specificatie/genereervariant/brk-bevragen",
-    "oas:resolve": "npm run oas:resolve-bag-bevragen && npm run oas:resolve-brk-bevragen",
+    "oas:resolve-brp-bevragen": "java -jar swagger-codegen-cli.jar generate -i ./specificatie/brp-bevragen/openapi.yaml -l openapi-yaml -o ./specificatie/genereervariant/brp-bevragen && java -jar swagger-codegen-cli.jar generate -i ./specificatie/brp-bevragen/openapi.yaml -l openapi -o ./specificatie/genereervariant/brp-bevragen",
+    "oas:resolve": "npm run oas:resolve-bag-bevragen && npm run oas:resolve-brk-bevragen && npm run oas:resolve-brp-bevragen",
     "postoas:resolve": "rm swagger-codegen-cli.jar"
   },
   "repository": {
