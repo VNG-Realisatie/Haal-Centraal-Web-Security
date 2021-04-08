@@ -59,7 +59,10 @@
         "ClientId": "m2m",
         "ClientSecrets": [ { "Value": "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=" } ],
         "AllowedGrantTypes": [ "client_credentials" ],
-        "AllowedScopes": [ "BAG", "BRK", "BRP" ]
+        "AllowedScopes": [ "BAG", "BRK", "BRP" ],
+        "Properties": {
+          "gemeente": "0518"
+        }
       }
     ]
   }
