@@ -200,7 +200,7 @@ In de certificate map zijn er drie pfx bestanden:
 
 Deze moeten worden geïmporteerd in de trusted root certificate store.
 
-Zie [Installeer self-signed certificates]('./installeer-self-signed-certificates.md') voor een overzicht van de te doorlopen stappen.
+Zie [Installeer self-signed certificates](./installeer-self-signed-certificates.md) voor een overzicht van de te doorlopen stappen.
 
 ## Bouwen Docker Images
 
