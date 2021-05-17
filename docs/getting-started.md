@@ -200,6 +200,8 @@ In de certificate map zijn er drie pfx bestanden:
 
 Deze moeten worden geïmporteerd in de trusted root certificate store.
 
+Zie [Installeer self-signed certificates]('./installeer-self-signed-certificates') voor een overzicht van de te doorlopen stappen.
+
 ## Bouwen Docker Images
 
 Het bouwen van de Docker Images voor de web applicaties wordt opgestart met behulp van de volgende statement: `docker-compose -f docker-compose-id4.yml build`
