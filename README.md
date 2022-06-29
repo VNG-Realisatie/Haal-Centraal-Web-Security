@@ -9,6 +9,6 @@ Repo voor het ontwikkelen van security best practices voor het gebruik van Haal 
 
 
 ## Contact 
-* Product Owner: [Cathy Dingemanse](mailto:cathy.dingemanse@denhaag.nl) 
+* Product Owner: [Cathy Dingemanse](mailto:c.dingemanse@comites.nl) 
 * Ontwikkelaar: [Melvin Lee](mailto:melvin.lee@iswish.nl) 
 * Ontwikkelaar: [Andre van den Nouweland](mailto:andre.vandennouweland@denhaag.nl)
