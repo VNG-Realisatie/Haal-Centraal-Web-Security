@@ -59,5 +59,5 @@ Naarmate jouw landschap meer applicaties bevat die gebruik maken van rollen en r
 
 ## Contact 
 
-* Product Owner: [Cathy Dingemanse](mailto:cathy.dingemanse@denhaag.nl) 
+* Product Owner: [Cathy Dingemanse](mailto:c.dingemanse@comites.nl) 
 * Ontwikkelaar: [Melvin Lee](mailto:melvin.lee@iswish.nl) 
